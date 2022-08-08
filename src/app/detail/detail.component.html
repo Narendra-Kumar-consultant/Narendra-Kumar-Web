@@ -1,0 +1,13 @@
+<h3>Details</h3>
+<span>User ID : {{data.userId}}</span><br>
+<span>ID : {{data.id}}</span><br>
+<span>Title : {{data.title}}</span><br>
+<span>Body : {{data.body}}</span>
+<br><br>
+<span style="color:red"> {{errorMessage}}</span>
+<br><br><br>
+ <form  (ngSubmit)="onSubmit()">
+<div class="text-center">
+    <button class="btn btn-primary mr-1" type="submit">Back</button>
+</div>
+</form>

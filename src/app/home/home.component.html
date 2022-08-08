@@ -1,0 +1,28 @@
+
+<div class="card m-3">
+    <h5 class="card-header">Angular App</h5>
+    <div class="card-body">
+        <form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                
+                <div class="form-group col-5">
+                    <label>Search: </label>
+                    <input type="text" formControlName="txtSearch" class="form-control" />
+                    <div *ngIf="sampleForm.get('txtSearch').errors && (sampleForm.get('txtSearch').dirty || sampleForm.get('txtSearch').touched)">
+                        <div *ngIf="sampleForm.get('txtSearch').hasError('required')">
+                            <span class="text-danger">Search required</span>
+                        </div>
+                        <div *ngIf="sampleForm.get('txtSearch').hasError('pattern')">
+                            <span class="text-danger">Number only</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <br/>
+            <div class="text-center">
+                <button class="btn btn-primary mr-1" type="submit" [disabled]="sampleForm.invalid">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
